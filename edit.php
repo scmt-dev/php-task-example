@@ -1,6 +1,7 @@
 <?php 
  include_once 'db.php';
 
+ // update
  if (isset($_POST['id'])) {
     $SQL = "UPDATE tasks SET title = ?, done = ? WHERE id = ?";
     $stmt = $db->prepare($SQL);
@@ -14,7 +15,7 @@
     $stmt->close();
     header("Location: index.php");
  }
-
+// get data to form
  $id = $_GET['id'];
  $SQL = "SELECT * FROM tasks WHERE id = ?";
  $stmt = $db->prepare($SQL);
