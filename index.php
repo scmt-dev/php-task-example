@@ -40,6 +40,7 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "<li>". 
                     $row['id'] . " - " . $row['title'] . 
+                   "| <a href='edit.php?id=" . $row['id'] . "'>Edit</a>". 
                    "| <a href='delete.php?id=" . $row['id'] . "'>x</a>". 
              "</li>";
     }
