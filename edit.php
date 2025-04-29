@@ -24,6 +24,12 @@
 
  $result = $stmt->get_result();
  $task = $result->fetch_assoc();
+
+ if(!$task) {
+    echo "Task not found";
+    exit();
+ }
+
  $stmt->close();
 ?>
 <!DOCTYPE html>
